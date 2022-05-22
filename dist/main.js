@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("console.log(\"hola\")\n\n//# sourceURL=webpack://webpack/./src/index.js?");
+eval("var arr = [1, 2, 3],\n    fun = function fun() {\n  var _console;\n\n  (_console = console).log.apply(_console, arr);\n};\n\nconsole.log(\"hola\");\nfun();\n\n//# sourceURL=webpack://webpack/./src/index.js?");
 
 /***/ })
 
