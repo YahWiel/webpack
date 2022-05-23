@@ -8,6 +8,7 @@
     "build-foo": "webpack --mode production --entry ./foo/src/index.js --output-path ./foo/dist",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
+    "start": "webpack serve --mode development --open --port 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,10 +19,12 @@
     "@babel/preset-env": "^7.18.0",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
     "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
   }
 }

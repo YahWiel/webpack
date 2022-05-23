@@ -1,5 +1,7 @@
   //plugin de html que estara mandando el codigo a la carpeta dist
-const HtmlWebPackPlugin=require("html-webpack-plugin");
+const HtmlWebPackPlugin=require("html-webpack-plugin"),
+miniCssExtractPlugin=require("mini-css-extract-plugin");
+
 module.exports={
     //el archivo de configuracion de webpack es un objecto con ciertas caracteristicas
     //module carga las caracteristicas entre ellas las rules y ellas van a ser un array y por cada elemento puede ser una cadena de texto o un objeto
@@ -27,6 +29,17 @@ module.exports={
                     },
                 ],
             },
+            {
+                test:/\.css$/i,
+                use:[
+                    miniCssExtractPlugin.loader,
+                    "css-loader"
+                ]
+            },
+            {
+                test:/\.(jpe?g|png|gif|svg|webp)$/i,
+                use:["file-loader?name=assets/[name].[ext]"], //le estoy diciendo que va a formar una carpeta llamada "assets" y en ella va  guardar los archivos; los[] hace referencia a que tomara el nombre del archivo
+            },
         ],
     },
   
@@ -35,5 +48,6 @@ module.exports={
             template:"./src/index.html", //declaramos nuestro archivo html base en el que se va a basar
             filename:"./index.html",//como quiero que se llame el archivo en mi carpeta de dist
         }),
+        new miniCssExtractPlugin(),
     ],
 };
