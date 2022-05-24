@@ -7,5 +7,17 @@ html{
     background-image: url(./541c2df3f69c552c44bb.png);
 }
 .pe{
-    width: 200px;
+    width: 100%;
+}
+#app{
+    width: 80%;
+    margin: 0 auto;
+}
+#app nav{
+  text-align: center;
+}
+#app a{
+    color: white;
+    text-decoration: none;
+    padding-right: 20px;
 }
